@@ -10,8 +10,9 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		scanf("%c", &a);
 		k = a - 'a'+1;
-		result += (k * tmp);
+		result += (k * tmp)%1234567891;
 		tmp *= 31;
+		tmp %= 1234567891;
 	}
 	result %= 1234567891;
 	printf("%lld", result);
