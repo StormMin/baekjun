@@ -11,6 +11,7 @@ int main(void) {
 	scanf("%d %d", &A, &B);
 	C = A - B;
 	if (A == B) printf("1");
+	else if (B==0) printf("1");
 	else
 	printf("%d", factor(A) / (factor(C) * (factor(B))));
 	return 0;
