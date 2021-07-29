@@ -12,14 +12,13 @@ int main(void) {
 	}
 	i = 0;
 	j = 1;
-	k = 0;
+	k = -1;
 	int q = 0;
 	int t = 0;
 	while (i < N) {
-		if (a[i] > st[k]) {
-			if (st[k] != 0) k++;
+		if (k==-1 ||a[i] > st[k]) {
 			pp[t++] = '+';
-			st[k] = j++;
+			st[++k] = j++;
 		}
 		else if (a[i] == st[k]) {
 			pp[t++] = '-';
@@ -28,14 +27,11 @@ int main(void) {
 		}
 		else if (a[i] < st[k]) {
 			printf("NO\n");
-			q = 1;
-			break;
+			return 0;
 		}
 }
-	if (q != 1) {
 		for (i = 0; i < t; i++) {
 			printf("%c\n", pp[i]);
 		}
-	}
 	return 0;
 }
